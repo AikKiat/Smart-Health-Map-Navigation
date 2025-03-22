@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/resized_image.xml -->
+<bitmap
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@mipmap/hospital"
+    android:gravity="center"
+    android:antialias="true"
+    android:dither="true"
+    android:filter="true"
+    android:tileMode="disabled"
+    android:scaleWidth = "0.5"
+    android:scaleHeight="0.5"
+    android:autoMirrored="false" />

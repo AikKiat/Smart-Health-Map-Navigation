@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainConstraintLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintLeft_toRightOf="parent">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/app_title"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/profile_picture"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="O"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/inter_regular"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/mainContentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="195dp"
+                android:background="@drawable/main_content_background"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="26dp"
+                android:paddingBottom="350dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/slider_handle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Nutrient intake"
+                        android:textColor="#101010"
+                        android:textSize="20sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/floating_box_background"
+                        android:padding="35dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/carbLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="0dp"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/proteinLayout"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/carbIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/carbTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Carbs"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/carbIcon"
+                                app:layout_constraintTop_toTopOf="@id/carbIcon" />
+
+                            <TextView
+                                android:id="@+id/carbValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/carbTitle"
+                                app:layout_constraintTop_toBottomOf="@id/carbTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/carbValue"
+                                app:layout_constraintLeft_toRightOf="@id/carbValue"
+                                app:layout_constraintTop_toTopOf="@id/carbValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/proteinLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginStart="44dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toEndOf="@+id/carbLayout"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/proteinIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/proteinTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Proteins"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/proteinIcon"
+                                app:layout_constraintTop_toTopOf="@id/proteinIcon" />
+
+                            <TextView
+                                android:id="@+id/proteinValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/proteinTitle"
+                                app:layout_constraintTop_toBottomOf="@id/proteinTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/proteinValue"
+                                app:layout_constraintLeft_toRightOf="@id/proteinValue"
+                                app:layout_constraintTop_toTopOf="@id/proteinValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fatLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="@id/carbLayout"
+                            app:layout_constraintRight_toRightOf="@id/carbLayout"
+                            app:layout_constraintTop_toBottomOf="@id/carbLayout">
+
+                            <ImageView
+                                android:id="@+id/fatIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fatTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Fats"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/fatIcon"
+                                app:layout_constraintTop_toTopOf="@id/fatIcon" />
+
+                            <TextView
+                                android:id="@+id/fatValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/fatTitle"
+                                app:layout_constraintTop_toBottomOf="@id/fatTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/fatValue"
+                                app:layout_constraintLeft_toRightOf="@id/fatValue"
+                                app:layout_constraintTop_toTopOf="@id/fatValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fibreLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="@id/proteinLayout"
+                            app:layout_constraintRight_toRightOf="@id/proteinLayout"
+                            app:layout_constraintTop_toBottomOf="@id/proteinLayout">
+
+                            <ImageView
+                                android:id="@+id/fibreIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fibreTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Fibre"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/fibreIcon"
+                                app:layout_constraintTop_toTopOf="@id/fibreIcon" />
+
+                            <TextView
+                                android:id="@+id/fibreValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/fibreTitle"
+                                app:layout_constraintTop_toBottomOf="@id/fibreTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/fibreValue"
+                                app:layout_constraintLeft_toRightOf="@id/fibreValue"
+                                app:layout_constraintTop_toTopOf="@id/fibreValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/sugarLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="@id/fatLayout"
+                            app:layout_constraintRight_toRightOf="@id/fatLayout"
+                            app:layout_constraintTop_toBottomOf="@id/fatLayout">
+
+                            <ImageView
+                                android:id="@+id/sugarIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/sugarTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Sugars"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/sugarIcon"
+                                app:layout_constraintTop_toTopOf="@id/sugarIcon" />
+
+                            <TextView
+                                android:id="@+id/sugarValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/sugarTitle"
+                                app:layout_constraintTop_toBottomOf="@id/sugarTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/sugarValue"
+                                app:layout_constraintLeft_toRightOf="@id/sugarValue"
+                                app:layout_constraintTop_toTopOf="@id/sugarValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/sodiumLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="@id/fibreLayout"
+                            app:layout_constraintRight_toRightOf="@id/fibreLayout"
+                            app:layout_constraintTop_toBottomOf="@id/fibreLayout">
+
+                            <ImageView
+                                android:id="@+id/sodiumIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/nutrient_rice_bowl"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/sodiumTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Sodium"
+                                android:textColor="@color/lightgray"
+                                app:layout_constraintLeft_toRightOf="@id/sodiumIcon"
+                                app:layout_constraintTop_toTopOf="@id/sodiumIcon" />
+
+                            <TextView
+                                android:id="@+id/sodiumValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="50.2g"
+                                android:textColor="#FFB011"
+                                android:textSize="16sp"
+                                app:layout_constraintLeft_toLeftOf="@id/sodiumTitle"
+                                app:layout_constraintTop_toBottomOf="@id/sodiumTitle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" / 216g"
+                                android:textColor="@color/black"
+                                app:layout_constraintBottom_toBottomOf="@id/sodiumValue"
+                                app:layout_constraintLeft_toRightOf="@id/sodiumValue"
+                                app:layout_constraintTop_toTopOf="@id/sodiumValue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="Upcoming schedule"
+                            android:textColor="#101010"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingHorizontal="10dp"
+                                android:scrollbars="none"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:id="@+id/upcomingScheduleLayout"
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </HorizontalScrollView>
+
+                            <View
+                                android:layout_width="80dp"
+                                android:layout_height="0dp"
+                                android:background="@drawable/up_schedule_gradient"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <LinearLayout
+                            android:id="@+id/botSuggestionLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/inter_bold"
+                                android:text="Nutrient intake"
+                                android:textColor="#101010"
+                                android:textSize="20sp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/botSuggestionsBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="10dp"
+                                >
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

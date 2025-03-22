@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/floating_box_background"
+    android:padding="8dp"
+    android:paddingRight="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/suggestionImage"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:src="@drawable/bot_suggestion_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginEnd="100dp"
+            android:contentDescription="Suggestion Image"
+
+        />
+        <TextView
+            android:id="@+id/suggestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:text="TITLE"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintLeft_toRightOf="@id/suggestionImage"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/suggestionDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="This is a very long text. what is going on here?! AAAAAAAAA"
+            android:textSize="12sp"
+            android:textColor="@color/lightgray"
+            android:fontFamily="@font/inter_medium"
+            android:maxLines="3"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/suggestionTitle"
+            app:layout_constraintLeft_toRightOf="@id/suggestionImage"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

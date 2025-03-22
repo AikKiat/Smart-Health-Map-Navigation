@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="160dp"
+    android:background="@drawable/floating_box_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/upcomingScheduleIcon"
+        android:contentDescription="upcoming schedule type"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/up_schedule_medicine" />
+
+    <TextView
+        android:id="@+id/upcomingScheduleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Aspirin"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/upcomingScheduleDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/lightgray"
+        android:text="Today" />
+
+    <TextView
+        android:id="@+id/upcomingScheduleTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12:00pm"
+        android:textColor="@color/black" />
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Infosys</string>
+    <string name="app_title">SMART HEALTH</string>
+    <string name="my_gmap_api_key">Put your API key here</string>
+</resources>
