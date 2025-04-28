@@ -1,5 +1,4 @@
-**Project has been completed! Go to main Repository Here:**
-https://github.com/ItsMeOX/SmartHealth
+
 
 
 **Smart Health, HealthTech App for the Elderly**
