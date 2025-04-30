@@ -1,9 +1,19 @@
-
+UPDATE:
+App has been completed:
+https://youtu.be/EaPBjWaO0MM
 
 
 **Smart Health, HealthTech App for the Elderly**
 
 <Work In Porgress>
+
+What this app is about:
+A AI-Driven HealthTech Android App for the Elderly, including:
+-Open Image Processing of food images to detecth nutrient intake
+-On the fly medicinal pacakge analyser to detect, display and save medication details automatically, removing hassle in having to keep track of them manually
+-Realtime ChatBot Health Assistant that guides users in maintaining a much healthier lifestyle.
+
+*Track Smarter, Consult Faster, Recover Better*
 
 *Current Working Function*
 Realtime Medical Centre Locator using Google Maps, Places API.
